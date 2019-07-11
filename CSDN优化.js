@@ -10,6 +10,8 @@
 // ==/UserScript==
 
 var timeout = 0
+var currentURL = window.location.href;
+var bolg = /\/\/blog.csdn.net/
 
 // 设置背景
 function setBackground(params) {
@@ -41,9 +43,13 @@ function clickReadMore() {
 
     // console.log(document.body.innerHTML);
 
-    setBackground();
+    if (bolg.test(currentURL)) {
+        setBackground();
 
-    clickReadMore();
+        clickReadMore();
+    } else {
+
+    }
 
 
 
