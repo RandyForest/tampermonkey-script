@@ -13,8 +13,22 @@ var timeout = 0
 var currentURL = window.location.href;
 var bolg = /\/\/blog.csdn.net/
 
-// 设置背景
-function setBackground(params) {
+// 去除博客页广告
+function removeBolgAd() {
+    var ad1 = document.querySelector(".vip-totast");
+    if (ad1 != null) {
+        ad1.remove();
+    }
+
+    var ad2 = document.querySelector(".csdn-side-toolbar");
+    if (ad2 != null) {
+        ad2.remove();
+    }
+
+}
+
+// 设置博客页背景
+function setBlogBackground(params) {
     console.log("设置背景");
 
     // 去除背景图
@@ -25,8 +39,8 @@ function setBackground(params) {
 
 }
 
-// 自动点击“查看更多”
-function clickReadMore() {
+// 博客页自动点击“查看更多”
+function clickBlogReadMore() {
     console.log("自动点击“查看更多”");
 
     var readmoreBtn = document.querySelector(".btn-readmore");
@@ -44,33 +58,9 @@ function clickReadMore() {
     // console.log(document.body.innerHTML);
 
     if (bolg.test(currentURL)) {
-        setBackground();
-
-        clickReadMore();
-    } else {
-
+        setBlogBackground();
+        removeBolgAd();
+        clickBlogReadMore();
     }
-
-
-
-    // 匿名访问
-    // var d = document;
-    // window.csdn.anonymousUserLimit.judgement = function () {
-    //     return !0;
-    // };
-
-
-    // 移除登录遮罩
-    // document.querySelector("body > div.login-mark").remove();
-
-    // 移除登录界面
-    // document.querySelector("#passportbox").remove();
-
-
-    // document.getElementsByClassName("pulllog-box")[0].style.display = "";
-    // document.getElementsByClassName("meau-list")[0].style.display = "none";
-    // document.getElementsByClassName("persion_article")[0].style.display = "none";
-    // document.getElementsByClassName("edu-promotion")[0].style.display = "none";
-
 
 })();
