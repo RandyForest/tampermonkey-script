@@ -13,6 +13,12 @@ var timeout = 0
 var currentURL = window.location.href;
 var bolg = /\/\/blog.csdn.net/
 
+// 优化博客页界面
+function blog() {
+    document.querySelector(".recommend-right").style.display="auto"
+
+}
+
 // 去除博客页广告
 function removeBolgAd() {
     var ad1 = document.querySelector(".vip-totast");
