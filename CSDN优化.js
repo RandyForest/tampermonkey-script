@@ -24,6 +24,16 @@ function removeBolgAd() {
     if (ad2 != null) {
         ad2.remove();
     }
+    
+    var ad3 = document.querySelector("#passportbox");
+    if (ad3 != null) {
+        ad3.remove();
+    }
+    
+    var ad4 = document.querySelector(".login-mark");
+    if (ad4 != null) {
+        ad4.remove();
+    }
 
 }
 
