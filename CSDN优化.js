@@ -13,6 +13,18 @@ var timeout = 0
 var currentURL = window.location.href;
 var bolg = /\/\/blog.csdn.net/
 
+function setBlogLeftDivBackground() {
+    var bgs = document.querySelectorAll(".aside-box > .aside-title");
+    if (bgs != null) {
+        bgs.forEach(function (el) {
+            el.style.backgroundImage = "none";
+            el.style.backgroundColor = "#ddd";
+        })
+
+    }
+
+}
+
 // 去除博客页广告
 function removeBolgAd() {
     var ad1 = document.querySelector(".vip-totast");
@@ -25,10 +37,15 @@ function removeBolgAd() {
         ad2.remove();
     }
 
+    var ad3 = document.querySelector(".mb8");
+    if (ad3 != null) {
+        ad3.remove();
+    }
+
 }
 
 // 设置博客页背景
-function setBlogBackground(params) {
+function setBlogBackground() {
     console.log("设置背景");
 
     // 去除背景图
@@ -59,6 +76,7 @@ function clickBlogReadMore() {
 
     if (bolg.test(currentURL)) {
         setBlogBackground();
+        setBlogLeftDivBackground();
         removeBolgAd();
         clickBlogReadMore();
     }
