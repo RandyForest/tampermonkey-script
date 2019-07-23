@@ -17,19 +17,19 @@ var tutorialsPage = /.*\.runoob.com\/.+\//;
 function setTutorialsPage() {
     var mainRow = document.querySelector(".main > .row");
     if (mainRow != null) {
-        mainRow.style.display="flex";
+        mainRow.style.display = "flex";
     }
-    
+
     var leftColumn = document.querySelector(".left-column");
     if (leftColumn != null) {
-        leftColumn.style.width = "auto";
+        leftColumn.style.width = "100%";
         leftColumn.style.minWidth = "150px";
         leftColumn.style.maxWidth = "200px";
     }
 
     var middleColumn = document.querySelector(".middle-column");
     if (middleColumn != null) {
-        middleColumn.style.width = "auto";
+        // middleColumn.style.width = "auto";
         // leftColumn.style.maxWidth="150px";
     }
 
