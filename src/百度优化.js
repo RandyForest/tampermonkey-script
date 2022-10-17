@@ -9,33 +9,32 @@
 // @grant        none
 // ==/UserScript==
 
-var timeout = 0
-var currentURL = window.location.href;
-var tieba = /tieba.baidu.com/
-
-function removeLoginDiv() {
-    // 移除遮罩
-    var fullDiv=document.querySelector("#TANGRAM__PSP_23__");
-    if (fullDiv!=null) {
-        fullDiv.remove
-    }
-
-    // 移除登录框
-    var loginDiv=document.querySelector("#passport-login-pop");
-    if (loginDiv!=null) {
-        loginDiv.remove
-    }
-}
 
 // 入口
 (function () {
     "use strict";
+    var timeout = 0
+    var currentURL = window.location.href;
+    var tieba = /tieba.baidu.com/
+
+    function removeLoginDiv() {
+        // 移除遮罩
+        var fullDiv=document.querySelector("#TANGRAM__PSP_23__");
+        if (fullDiv!=null) {
+            fullDiv.remove
+        }
+
+        // 移除登录框
+        var loginDiv=document.querySelector("#passport-login-pop");
+        if (loginDiv!=null) {
+            loginDiv.remove
+        }
+    }
 
     // console.log(document.body.innerHTML);
 
     if (tieba.test(currentURL)) {
         setBackground();
-
         clickReadMore();
     } else {
 

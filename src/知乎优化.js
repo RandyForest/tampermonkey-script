@@ -9,24 +9,23 @@
 // @grant        none
 // ==/UserScript==
 
-var timeout = 0;
-var currentURL = window.location.href;
-var question = /.*.zhihu.com\/question\//;
+// 入口
+(function () {
+  "use strict";
 
-function removeAd() {
+  var timeout = 0;
+  var currentURL = window.location.href;
+  var question = /.*.zhihu.com\/question\//;
+
+  function removeAd() {
     // 检查AdBlock的div
     var ad1 = document.querySelector(".AdblockBanner");
     if (ad1 != null) {
-        ad1.remove();
+      ad1.remove();
     }
-}
+  }
 
-// 入口
-(function () {
-    "use strict";
-
-    if (question.test(currentURL)) {
-        removeAd();
-    }
-
+  if (question.test(currentURL)) {
+    removeAd();
+  }
 })();
