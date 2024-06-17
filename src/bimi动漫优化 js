@@ -20,6 +20,9 @@
   #HMcoupletDivleft { display: none }
   #HMcoupletDivright { display: none }
   #HMRichBox { display: none !important }
+  .tuiguang { display: none }
+  .tuiguang2 { display: none }
+  #adv_wrap_hh { display: none !important }
 
   /** 样式优化 */
   `;
